@@ -1,1 +1,1 @@
-# EastGames-TestGame2025
+A test assignment done by myself for software engineering internship at EastGames in late summer 2025. This test game was done in about four weeks time period, from scratch, in C++ language. Game is built using SDL3 library. All art resources are found online. For more details about the assignment read the test-programmer.pdf (written in russian language).
