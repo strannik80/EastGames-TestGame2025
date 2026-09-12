@@ -657,33 +657,7 @@ namespace UI
 			float mouseX = System::mouseCoords.x;
 			float mouseY = System::mouseCoords.y;
 
-			/*
-			SDL_FRect frect;
-			SDL_GetRenderLogicalPresentationRect(Graphics::Renderer, &frect);
-
-			float widthFactor = static_cast<float>(frect.w) / static_cast<float>(Graphics::TargetWindowWidth);
-			float heightFactor = static_cast<float>(frect.h) / static_cast<float>(Graphics::TargetWindowHeight);
-
-			SDL_Log("w: %f, h: %f, wF: %f, hF: %f", frect.w, frect.h, widthFactor, heightFactor);
-			*/
-
-			/*
-			int width = 0, height = 0;
-			SDL_GetRenderOutputSize(Graphics::Renderer, &width, &height);
-
-			float widthFactor =	static_cast<float>(width) / static_cast<float>(Graphics::TargetWindowWidth);
-			float heightFactor = static_cast<float>(height) / static_cast<float>(Graphics::TargetWindowHeight);
-			SDL_Log("w: %i, h: %i, wF: %f, hF: %f", width, height, widthFactor, heightFactor);
-			*/
-
-
-
-
-			//float widthFactor =	static_cast<float>(Graphics::WindowWidth) / static_cast<float>(Graphics::TargetWindowWidth);
-			//float heightFactor = static_cast<float>(Graphics::WindowHeight) / static_cast<float>(Graphics::TargetWindowHeight);
-			//SDL_Log("w: %d, h: %d, wF: %f, hF: %f", Graphics::WindowWidth, Graphics::WindowHeight, widthFactor, heightFactor);
-
-
+			
 
 			for (size_t idx = 0; idx < UI::currentScreen->buttonCount; ++idx) {
 
@@ -710,6 +684,8 @@ namespace UI
 	}
 
 	void ProcessButtons() {
+		if (currentScreen->scrnType == ScreenType::BattleOn) return;
+
 		if (!System::bMouseBtnDown) UI::bOverlapedBtnAletered = false;
 
 		if (UI::bOverlapedBtnIndexFound && System::bMouseBtnDown) {
